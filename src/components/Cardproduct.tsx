@@ -1,15 +1,32 @@
+import React from "react";
 import { Card, Text } from "react-native-paper";
 
-export const Cardproduct = ({ props }: { props: any }) => {
+import { useImage } from "../hooks/useImage";
+
+interface StarshipCardProps {
+  name: string;
+  model: string;
+  manufacturer: string;
+  cost_in_credits: string;
+  crew: string;
+  hyperdrive_rating: string;
+}
+
+export function Cardproduct(props: StarshipCardProps) {
+  const { name, model, cost_in_credits, crew, hyperdrive_rating } = props;
+  const image = useImage(name);
+
   return (
     <Card
     >
-      <Card.Title title={props.name} subtitle={props.model} />
+      <Card.Cover source={image} />
+      <Card.Title title={name} subtitle={model} />
       <Card.Content>
-        <Text>{props.crew}</Text>
-        <Text>{props.hyperdrive_rating}</Text>
-        <Text>{props.cost_in_credits}</Text>
+        <Text>Crew : {crew}</Text>
+        <Text>HR : {hyperdrive_rating}</Text>
+        <Text>Cost in credits : {cost_in_credits}</Text>
       </Card.Content>
     </Card>
   );
 };
+

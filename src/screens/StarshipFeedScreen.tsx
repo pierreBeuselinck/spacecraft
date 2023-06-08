@@ -26,10 +26,12 @@ export const StarshipFeedScreen = () => {
 
     return (
         <SafeAreaView>
-            <FlatList
-                data={data.results}
-                renderItem={({ item }) => <Cardproduct props={item} />}
-            />
+    <FlatList
+        data={data.results}
+        renderItem={({ item, index }) => (
+          <Cardproduct key={item.name + "-" + index} {...item} />
+        )}
+      />
         </SafeAreaView>
     );
 };
