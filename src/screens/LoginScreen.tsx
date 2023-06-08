@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 
-export default function App() {
+export const LoginScreen = () => {
   return (
     <>
     <View style={styles.container}>
