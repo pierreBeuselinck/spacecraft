@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet } from "react-native";
 import React from "react";
 import { Text } from "react-native-paper";
@@ -9,6 +10,7 @@ type HeaderProps = {
 export const Header = ({ title }: HeaderProps) => {
   return (
     <View style={styles.titleWrapper}>
+        <StatusBar style='light'></StatusBar>
         <Text variant="displayMedium">{title}</Text>
     </View>
   );
